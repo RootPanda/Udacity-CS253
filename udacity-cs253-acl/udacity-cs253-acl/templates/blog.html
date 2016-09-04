@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="content">
+	{% for b in blog %}
+	<div class="post">
+		<div class="post-heading">
+			<a href="/blog/{{b.key().id()}}" class="post-title">
+				{{b.subject}}
+			</a>
+
+			<div class="post-date">
+				{{b.created}}
+			</div>
+		</div>
+
+		<div class="post-content">
+			{{b.blogtext}}
+		</div>
+	</div>
+	<br><br>
+	{% endfor %}
+	<div class="age">
+	queried {{age}} seconds ago
+	</div>
+
+</div>
+
+{% endblock %}
+
